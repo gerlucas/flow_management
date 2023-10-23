@@ -75,12 +75,28 @@
 
 <body>
     <?php include '../prt/header.prt.php' ?>
+
     <main>
 
-        <p>Area de Administração</p>
-        <a href="../admin/cadastroUsuarios.php">Cadastrar Usuario</a>
-        <a href="../admin/cadastroProdutos.php">Cadastrar Produtos</a>
+        <p>Cadastro de Produtos</p>
 
+        <?php
+        require_once '../classes/usuarioservices.class.php';
+        ?>
+
+        <form method="get" action="">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome"><br><br>
+            <label for="preco">Preço</label>
+            <input type="number" name="preco" id="preco"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+
+        <?php
+        if (isset($_GET['nome']) && isset($_GET['preco'])) {
+            UsuarioServices::salvarProduto($_GET['nome'], $_GET['preco']);
+        }
+        ?>
     </main>
     <?php include '../prt/footer.prt.php' ?>
 </body>

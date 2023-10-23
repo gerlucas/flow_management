@@ -92,14 +92,20 @@
             <label for="senha">Senha:</label>
             <input type="password" name="senha" id="senha"><br><br>
             <label for="adm">Administrador</label>
-            <input type="checkbox" name="adm" id="adm"><br><br>
+            <input type="radio" name="role" id="adm" value="administrador"><br><br>
+            <label for="gerente">Gerente</label>
+            <input type="radio" name="role" id="gerente" value="gerente"><br><br>
+            <label for="caixa">Caixa</label>
+            <input type="radio" name="role" id="caixa" value="caixa"><br><br>
             <input type="submit" value="Enviar">
         </form>
 
         <?php
-        if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha'])) {
-            UsuarioServices::salvarUsuario($_GET['nome'], $_GET['email'], $_GET['senha'], isset($_GET['adm']));
+        if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha']) && isset($_GET['role'])) {
+            $role = $_GET['role'];
+            UsuarioServices::salvarUsuario($_GET['nome'], $_GET['email'], $_GET['senha'], $role);
         }
+        
         ?>
     </main>
     <?php include '../prt/footer.prt.php' ?>
