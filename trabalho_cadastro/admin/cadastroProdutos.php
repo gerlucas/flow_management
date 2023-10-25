@@ -87,7 +87,7 @@
         <form method="get" action="">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome"><br><br>
-            <label for="preco">Preço</label>
+            <label for="preco">Preço:</label>
             <input type="number" name="preco" id="preco"><br><br>
             <input type="submit" value="Enviar">
         </form>
