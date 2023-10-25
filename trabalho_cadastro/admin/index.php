@@ -80,6 +80,7 @@
         <p>Area de Administração</p>
         <a href="../admin/cadastroUsuarios.php">Cadastrar Usuario</a>
         <a href="../admin/cadastroProdutos.php">Cadastrar Produtos</a>
+        <a href="../admin/cadastroNoticias.php">Criar Noticias</a>
 
     </main>
     <?php include '../prt/footer.prt.php' ?>

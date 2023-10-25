@@ -78,34 +78,27 @@
 
     <main>
 
-        <p>Cadastro de Usuarios</p>
+        <p>Cadastro de Produtos</p>
 
         <?php
         require_once '../classes/usuarioservices.class.php';
         ?>
 
-        <form method="get" action="">
+        <form method="post" action="cadastrarNoticia.php" enctype="multipart/form-data">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"><br><br>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha"><br><br>
-            <label for="gerente">Gerente</label>
-            <input type="radio" name="role" id="gerente" value="gerente"><br><br>
-            <label for="caixa">Caixa</label>
-            <input type="radio" name="role" id="caixa" value="caixa"><br><br>
-            <label for="cliente">Cliente</label>
-            <input type="radio" name="role" id="cliente" value="cliente"><br><br>
-            <input type="submit" value="Enviar">
+            <label for="desc">Descrição</label>
+            <input type="text" name="desc" id="desc"><br><br>
+    		<label for="imagem">Imagem:</label>
+		    <input type="file" name="imagem"/>
+		    <br/>
+		    <input type="submit" value="Enviar"/>
         </form>
 
         <?php
-        if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['senha']) && isset($_GET['role'])) {
-            $role = $_GET['role'];
-            UsuarioServices::salvarUsuario($_GET['nome'], $_GET['email'], $_GET['senha'], $role);
+        if (isset($_GET['nome']) && isset($_GET['preco'])) {
+            UsuarioServices::salvarProduto($_GET['nome'], $_GET['preco']);
         }
-        
         ?>
     </main>
     <?php include '../prt/footer.prt.php' ?>

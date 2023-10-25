@@ -10,8 +10,9 @@ class Util
         return isset($_SESSION['usuario']);
     }
 
-    public static function logout(){
-        if(!isset($_SESSION)) session_start();
+    public static function logout()
+    {
+        if (!isset($_SESSION)) session_start();
         session_destroy();
         header('Location:/trabalho_cadastro/index.php');
         die();
@@ -39,17 +40,16 @@ class Util
         $usuario = R::findOne('usuarios', 'email = ? and senha = ?', [$email, md5($senha . '___')]);
         if (isset($usuario)) {
             session_start();
-            $_SESSION['usuario'] = $usuario['nome'];
-            $_SESSION['email'] = $usuario['email'];
-            $_SESSION['admin'] = $usuario['admin'];
+            $_SESSION['usuario'] = $usuario->nome; 
+            $_SESSION['email'] = $usuario->email;
 
-            if ($usuario['admin']) {
-                header('refresh:2;url=/trabalho_cadastro/admin/index.php');
-                echo '<h1>Você está logado adm. Redirecionando...</h1>';
-            } else {
-                header('refresh:2;url=/trabalho_cadastro/usuarios/index.php');
-                echo '<h1>Você está logado usr. Redirecionando...</h1>';
-            } 
+            if ($usuario->role === 'gerente') { 
+                header('Location: /trabalho_cadastro/admin/index.php');
+            } else if($usuario->role === 'caixa') {
+                header('Location: /trabalho_cadastro/caixa/index.php');
+            }  else if($usuario->role === 'cliente') {
+            header('Location: /trabalho_cadastro/usuarios/index.php');
+        }
         } else {
             header('refresh:5;url=/trabalho_cadastro/index.php');
             echo '<h1>Dados incorretos. Tente novamente em 5 segundos.</h1>';

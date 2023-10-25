@@ -9,7 +9,7 @@ $u = R::dispense('usuarios');
 $u->nome = 'Lucas';
 $u->email = 'lucas@gmail.com';
 $u->senha = md5('456' . '___');
-$u->role = 'administrador';
+$u->role = 'gerente';
 
 R::store($u);
 ?>
