@@ -25,11 +25,26 @@ class UsuarioServices
 
         R::setup('mysql:host=127.0.0.1;dbname=testesusuarios', 'root', '');
 
-        $u = R::dispense('produtos');
-        $u->nome = $nome;
-        $u->preco = $preco;
+        $p = R::dispense('produtos');
+        $p->nome = $nome;
+        $p->preco = $preco;
 
-        R::store($u);
+        R::store($p);
+        R::close();
+    }
+
+    public static function salvarNoticia($nome, $desc, $img)
+    {
+        require_once '../classes/r.class.php'; 
+        require_once '../classes/autoloader.class.php'; 
+        R::setup('mysql:host=127.0.0.1;dbname=testesusuarios', 'root', '');
+
+        $n = R::dispense('noticias');
+        $n->nome = $nome;
+        $n->desc = $desc;
+        $n->caminho_imagem = $img;
+
+        R::store($n);
         R::close();
     }
 
