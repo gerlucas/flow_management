@@ -76,12 +76,7 @@
     
     <main>
             
-            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, beatae ab hic quos asperiores minima numquam officiis saepe blanditiis ipsum cupiditate rem optio dolor ducimus consectetur, magni repellat, inventore itaque?
-            Commodi perferendis quod enim, repellendus unde consectetur soluta magnam aliquid nihil placeat nisi ipsa rerum atque recusandae impedit architecto fugiat ut voluptatem maiores velit, possimus quasi cum. Repellat, autem alias.
-            Voluptatibus officiis debitis consequatur earum perferendis nisi ipsa aliquid nostrum, sed maiores dignissimos quo iste sequi consectetur eveniet voluptatem quae facilis dolor inventore eos repellendus perspiciatis id animi incidunt? Laboriosam.
-            Tempore ipsam temporibus quidem debitis esse facere, necessitatibus, perspiciatis ex est non quae qui totam voluptatem dolore deserunt ratione corporis tempora error laboriosam. Consectetur nam error praesentium non aliquam cupiditate.
-            Soluta aperiam minus reprehenderit, aspernatur esse ut repudiandae ducimus quasi odit ad accusantium ipsum ullam quod rerum praesentium eum nemo consequatur similique voluptatum possimus autem. Eius soluta magni mollitia iure!</p>
-             -->
+           
     </main>
     <?php include 'prt/footer.prt.php' ?>
 </body>

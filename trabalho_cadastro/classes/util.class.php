@@ -14,13 +14,12 @@ class Util
     {
         if (!isset($_SESSION)) session_start();
         session_destroy();
-        header('Location:/trabalho_cadastro/index.php');
+        header('Location:/flow_management/trabalho_cadastro/index.php');
         die();
     }
 
     public static function validarAcesso()
     {
-
         session_start();
         if (isset($_SESSION['usuario'])) {
             $nome = $_SESSION['usuario'];
@@ -44,14 +43,14 @@ class Util
             $_SESSION['email'] = $usuario->email;
 
             if ($usuario->role === 'gerente') { 
-                header('Location: /trabalho_cadastro/admin/index.php');
+                header('Location:/flow_management/trabalho_cadastro/admin/index.php');
             } else if($usuario->role === 'caixa') {
-                header('Location: /trabalho_cadastro/caixa/index.php');
+                header('Location:/flow_management/trabalho_cadastro/caixa/index.php');
             }  else if($usuario->role === 'cliente') {
-            header('Location: /trabalho_cadastro/usuarios/index.php');
+            header('Location:/flow_management/trabalho_cadastro/usuarios/index.php');
         }
         } else {
-            header('refresh:5;url=/trabalho_cadastro/index.php');
+            header('refresh:5;url=/flow_management/trabalho_cadastro/index.php');
             echo '<h1>Dados incorretos. Tente novamente em 5 segundos.</h1>';
         }
 
